@@ -1,0 +1,59 @@
+database:
+  host: 127.0.0.1
+  port: 3306
+  name: foliashop
+  user: foliashop
+  password: zxc0002
+  useSSL: false
+  pool:
+    maximumPoolSize: 10
+    minimumIdle: 2
+    connectionTimeoutMs: 10000
+
+gui:
+  rows: 6
+  previous-slot: 46
+  close-slot: 49
+  next-slot: 52
+  filler-enabled: true
+  filler-material: GRAY_STAINED_GLASS_PANE
+  confirm-sell-name: "§a✔ 确定卖出"
+  close-name: "§c✖ 关闭"
+  previous-name: "§e« 上一页"
+  next-name: "§e下一页 »"
+
+pagination:
+  items-per-page: 45
+
+economy:
+  enable-fee-on-sell: true
+  fee-percent: 5.0
+  fee-rounding: ROUND_HALF_UP   # ROUND_DOWN | CEIL
+  buy-fee-percent: 0.0
+  currency-format: "{amount} $"
+
+sell:
+  allow-blacklist: false
+  blacklist:
+    - BEDROCK
+    - COMMAND_BLOCK
+  whitelist: [] # 若非空则只允许这些
+  max-total-amount: 1000000.00
+  click-cooldown-ms: 300
+
+matching:
+  match-mode: MATERIAL_ONLY      # MATERIAL_ONLY | (预留：MATERIAL_NAME | STRICT_NBT)
+  name-ignore-colors: true
+
+inventory:
+  show-zero-stock: false
+  lot-mode: NONE                 # NONE | FIFO | LIFO  （示例实现 NONE，预留字段）
+  enable-expiration: false
+  default-expire-hours: 0
+  remove-expired-on-load: true
+  cap-per-item: 100000
+  merge-on-sell: true
+
+ui:
+  stock-lore-format: "§7库存: §e{stock}"
+  source-lore: true

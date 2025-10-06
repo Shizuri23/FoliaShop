@@ -1,0 +1,23 @@
+name: FoliaShop
+main: com.example.foliashop.FoliaShopPlugin
+version: 1.0.0
+api-version: '1.21'
+folia-supported: true
+depend: [Vault]
+commands:
+  setshop:
+    description: Place a shop chest at your crosshair.
+    permission: foliashop.admin.set
+  setsell:
+    description: Place a sell chest at your crosshair.
+    permission: foliashop.admin.set
+  shop:
+    description: Manage FoliaShop
+    aliases: [fs, fshop]
+permissions:
+  foliashop.use:
+    default: true
+  foliashop.admin.set:
+    default: op
+  foliashop.admin.manage:
+    default: op

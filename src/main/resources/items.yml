@@ -1,0 +1,15 @@
+items:
+  - material: COBBLESTONE
+    display-name: "§7圆石"
+    buy-price: 2.0
+    sell-price: 1.0
+
+  - material: DIAMOND
+    display-name: "§b钻石"
+    buy-price: 120.0
+    sell-price: 100.0
+
+  - material: NETHERITE_INGOT
+    display-name: "§5下界合金锭"
+    buy-price: 1500.0
+    sell-price: 1200.0
