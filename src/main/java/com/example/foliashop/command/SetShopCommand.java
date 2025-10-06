@@ -29,14 +29,22 @@ public class SetShopCommand implements CommandExecutor {
             return true;
         }
         Block target = p.getTargetBlockExact(5);
-        if (target == null || target.getType() != Material.AIR) {
-            plugin.msg().send(p, "not-looking-at-air", Map.of());
+        if (target == null) {
+            plugin.msg().send(p, "shop-invalid-target", Map.of());
             return true;
         }
+        Material type = target.getType();
+        if (type != Material.AIR && type != Material.CHEST) {
+            plugin.msg().send(p, "shop-invalid-target", Map.of());
+            return true;
+        }
+        boolean shouldPlaceChest = type == Material.AIR;
         Location place = target.getLocation();
 
         FoliaSchedulerUtil.runAtLocation(plugin, place, () -> {
-            place.getBlock().setType(Material.CHEST);
+            if (shouldPlaceChest) {
+                place.getBlock().setType(Material.CHEST);
+            }
             ShopPoint sp = new ShopPoint(0, place.getWorld().getName(), place.getBlockX(), place.getBlockY(), place.getBlockZ(),
                     "SHOP", p.getLocation().getYaw(), p.getLocation().getPitch(), p.getUniqueId().toString());
             try {
