@@ -1,6 +1,7 @@
 prefix: "§7[§aShop§7] "
 no-permission: "{prefix}§c你没有权限。"
 not-looking-at-air: "{prefix}§c目标位置非空气，无法放置箱子。"
+shop-invalid-target: "{prefix}§c目标方块必须是空气或箱子，无法创建商店。"
 shop-placed: "{prefix}§a商店点已创建 §7@ {world} {x} {y} {z}"
 sell-placed: "{prefix}§a回收点已创建 §7@ {world} {x} {y} {z}"
 open-shop: "{prefix}§a已打开商店。"
